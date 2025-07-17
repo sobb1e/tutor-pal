@@ -1,0 +1,187 @@
+:root {
+  --primary: #4a90e2;       /* Softer blue */
+  --secondary: #50b948;     /* Softer green */
+  --accent: #f9ab00;        /* Accent stays bright */
+  --dark: #121212;          /* Very dark background */
+  --light: #e0e0e0;         /* Light text */
+  --gray: #a0a0a0;          /* Muted gray for less emphasis */
+  --card-bg: #1e1e1e;       /* Dark card background */
+  --button-hover: #d18f00;  /* Darker accent for hover */
+  --hero-gradient-start: #0d47a1;
+  --hero-gradient-end: #1b5e20;
+}
+
+/* Reset and base */
+body {
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* Container: center content and limit max width */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Page container: full width with vertical padding */
+.page-container {
+  width: 100vw;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section: full width with gradient and padding */
+.hero {
+  width: 100vw;
+  background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+  color: var(--light);
+  padding: 6rem 0;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+}
+
+/* Hero text */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 60vw; /* relative to viewport width */
+  margin: 0 auto 2.5rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: var(--accent);
+  color: var(--dark);
+  border: none;
+  padding: 0.9rem 2.25rem; /* relative padding */
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(249, 171, 0, 0.5);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  background-color: var(--button-hover);
+  box-shadow: 0 6px 15px rgba(209, 143, 0, 0.7);
+}
+
+/* Features Section: full width with padding */
+.features {
+  width: 100vw;
+  padding: 5rem 0;
+  background-color: #181818;
+  box-sizing: border-box;
+}
+
+/* Features container grid */
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* min width in rem */
+  gap: 1.25rem;
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--light);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.7);
+}
+
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+}
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  gap: 0.75rem; /* space between logo image and text */
+}
+
+/* Logo image */
+.logo-img {
+  height: 2.5rem; /* adjust size as needed */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(34%) sepia(81%) saturate(749%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  /* This filter can be adjusted or removed depending on your logo colors */
+  transition: filter 0.3s ease;
+}
+
+/* Optional: on hover, slightly brighten the logo */
+.logo:hover .logo-img {
+  filter: brightness(1.2);
+}
+/* Make the container a flex container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between; /* space between logo and nav-links */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* Make nav-links a flex container with spaced out links */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem; /* space between each link */
+  min-width: 300px; /* ensures some minimum width so links spread out */
+}
+/* Optional: adjust link styles */
+.nav-links a {
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
